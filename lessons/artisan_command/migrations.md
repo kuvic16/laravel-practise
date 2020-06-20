@@ -11,3 +11,15 @@ php artisan migrate:rollback
 ```
 php artisan migrate:fresh
 ```
+
+### Build a factory for a model
+
+```
+php artisan make:factory PostFactory -m Post
+```
+
+### Create a model with migration file
+
+```
+php artisan make:model User -m
+```
