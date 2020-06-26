@@ -6,8 +6,14 @@
 php artisan tinekr
 ```
 
-### Crea a Factory for a model
+### Create a Factory for a model
 
 ```
 php artisan make:factory PostFactory -m Post
+```
+
+### Creat a model, migration and factory
+
+```
+php artisan make:model Affiliation -m -f
 ```
