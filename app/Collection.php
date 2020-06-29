@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Series extends Model
+class Collection extends Model
 {
     public function videos()
     {
