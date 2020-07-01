@@ -18,7 +18,14 @@ class Post extends Model
         return $this->belongsToMany(Tag::class)->withTimestamps();
     }
 
-    public function like()
+    public function like($user = null)
     {
+        $user = $user ?: auth()->user();
+        return $this->likes()->attach($user);
+    }
+
+    public function likes()
+    {
+        return $this->belongsToMany(Users::class)->withTimestamps();
     }
 }
