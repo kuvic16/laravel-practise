@@ -6,6 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Post extends Model
 {
+    use Likable;
+
     protected $guarded = [];
 
     public function comments()
@@ -16,16 +18,5 @@ class Post extends Model
     public function tags()
     {
         return $this->belongsToMany(Tag::class)->withTimestamps();
-    }
-
-    public function like($user = null)
-    {
-        $user = $user ?: auth()->user();
-        return $this->likes()->attach($user);
-    }
-
-    public function likes()
-    {
-        return $this->belongsToMany(Users::class)->withTimestamps();
     }
 }
