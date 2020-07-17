@@ -29,9 +29,18 @@ Route::get('/', function () {
     //     'version' => '1.0'
     // ];
 });
-Route::get('/map', function () {
-    return view('map');
+
+Route::get('/post/{post}', function ($post) {
+    $posts = [
+        'my-first-post'   => 'Hello, this is my first blog post!',
+        'my-second-post' => 'Now, I am getting the hang of this blogging thing.'
+    ];
+
+    if (!array_key_exists($post, $posts)) {
+        abort(404, 'Sorry, that post was not found.');
+    }
+
+    return view('post', [
+        'post' => $posts[$post]
+    ]);
 });
-//https://weathervision.app/api/v1/uid=(UID here),(lat),(lon)
-Route::get('/api/v1', 'ApiController@getReports');
-Route::get('/api/test', 'ApiController@test');
