@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">        
     </head>
     <body class="text-center">
-        <h1>My Blog Post</h1>
-        <p>{{$post}}</p>
+            <h1>My Blog Post</h1>
+            <p>{{$post->title}}</p>
     </body>
 </html>
