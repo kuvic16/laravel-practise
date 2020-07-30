@@ -12,22 +12,14 @@
 */
 
 Route::get('/', function () {
-
-    $user = App\User::first();
-
-    $post = $user->posts()->create([
-        'title' => 'foobar',
-        'body'  => 'lorem ipsum'
-    ]);
-
-    $post->tags()->attach(2);
+    // $user = App\User::first();
+    // $post = $user->posts()->create([
+    //     'title' => 'foobar',
+    //     'body'  => 'lorem ipsum'
+    // ]);
+    // $post->tags()->attach(2);
 
     return view('home');
-
-    // return [
-    //     'Project' => 'Tornado Vision API',
-    //     'version' => '1.0'
-    // ];
 });
 
 Route::get('/post/{post}', "PostController@show");
