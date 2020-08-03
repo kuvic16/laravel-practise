@@ -32,6 +32,6 @@ Route::get('/about', function () {
     ]);
 });
 
-
+Route::get('/articles/{article}', 'ArticlesController@show');
 
 Route::get('/post/{post}', "PostController@show");
