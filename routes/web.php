@@ -22,4 +22,8 @@ Route::get('/', function () {
     return view('home');
 });
 
+Route::get('/contact', function () {
+    return view('contact');
+});
+
 Route::get('/post/{post}', "PostController@show");
