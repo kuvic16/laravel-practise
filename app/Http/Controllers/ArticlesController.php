@@ -32,4 +32,47 @@ class ArticlesController extends Controller
         }
         return view('articles.show', ['article' => $article]);
     }
+
+    /**
+     * Shows a view to create a new resource
+     * 
+     * @return \Illuminate\View\View
+     */
+    public function create()
+    {
+    }
+
+    /**
+     * Persist the new resource
+     * 
+     * @return void
+     */
+    public function store()
+    {
+    }
+
+    /**
+     * Show a view to edit an existing resource
+     * 
+     * @return \Illuminate\View\View
+     */
+    public function edit()
+    {
+    }
+
+    /**
+     * Persist the edited resource
+     * 
+     * @return
+     */
+    public function update()
+    {
+    }
+
+    /**
+     * Delete the resource
+     */
+    public function destroy()
+    {
+    }
 }

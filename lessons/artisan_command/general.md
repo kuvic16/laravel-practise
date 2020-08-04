@@ -23,3 +23,9 @@ php artisan make:model Affiliation -m -f
 ```
 php artisan make:model Project -mc
 ```
+
+### Create a controller with all methods
+
+```
+php artisan make:controller ProjectsController -r
+```
