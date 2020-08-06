@@ -36,3 +36,14 @@ Route::get('/articles', 'ArticlesController@index');
 Route::get('/articles/{article}', 'ArticlesController@show');
 
 Route::get('/post/{post}', "PostController@show");
+
+
+// Routing standard
+
+// GET    /videos
+// GET    /videos/create
+// POST   /videos
+// GET    /videos/2
+// GET    /videos/2/edit
+// PUT    /videos/2
+// DELETE /videos/2
