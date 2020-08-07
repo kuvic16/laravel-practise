@@ -11,6 +11,7 @@
 
             <form method="POST" action="/articles/{{$article->id}}">
                 @csrf
+                @method('PUT')
                 <div class="field">
                     <label for="title" class="label">Title</label>
                     <div class="control">
