@@ -9,7 +9,7 @@
         <div id="page" class="container">
             <h1 class="heading has-text-weight-bold is-size-4">Update Article</h1>
 
-            <form method="PUT" action="/articles/{{$article->id}}">
+            <form method="PUT" action="/articles/update">
                 @csrf
                 <div class="field">
                     <label for="title" class="label">Title</label>
