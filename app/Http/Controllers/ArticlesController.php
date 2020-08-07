@@ -83,10 +83,7 @@ class ArticlesController extends Controller
      */
     public function update($id)
     {
-        dd("here");
         $article = Article::find($id);
-        dd($article);
-        die();
 
         $article->title   = request('title');
         $article->excerpt = request('excerpt');
