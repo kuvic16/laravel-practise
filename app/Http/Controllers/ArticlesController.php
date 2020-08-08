@@ -49,17 +49,7 @@ class ArticlesController extends Controller
      */
     public function store()
     {
-        request()->validate([
-            'title'   => 'required',
-            'excerpt' => 'required',
-            'body'    => 'required'
-        ]);
-
-        Article::create([
-            'title'   => request('title'),
-            'excerpt' => request('excerpt'),
-            'body'    => request('body')
-        ]);
+        Article::create($this->validateArticle());
         return redirect('/articles');
     }
 
@@ -70,9 +60,8 @@ class ArticlesController extends Controller
      * 
      * @return \Illuminate\View\View
      */
-    public function edit($id)
+    public function edit(Article $article)
     {
-        $article = Article::findOrFail($id);
         return view('articles.edit', compact('article'));
     }
 
@@ -83,21 +72,9 @@ class ArticlesController extends Controller
      * 
      * @return \Illuminate\View\View
      */
-    public function update($id)
+    public function update(Article $article)
     {
-        request()->validate([
-            'title'   => 'required',
-            'excerpt' => 'required',
-            'body'    => 'required'
-        ]);
-
-        $article = Article::findOrFail($id);
-
-        $article->title   = request('title');
-        $article->excerpt = request('excerpt');
-        $article->body    = request('body');
-        $article->save();
-
+        $article->update($this->validateArticle());
         return redirect('/articles/' . $article->id);
     }
 
@@ -106,5 +83,14 @@ class ArticlesController extends Controller
      */
     public function destroy()
     {
+    }
+
+    protected function validateArticle()
+    {
+        return request()->validate([
+            'title'   => 'required',
+            'excerpt' => 'required',
+            'body'    => 'required'
+        ]);
     }
 }
