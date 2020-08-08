@@ -24,9 +24,8 @@ class ArticlesController extends Controller
      * @param int $id
      * @return \Illuminate\View\View | abort
      */
-    public function show($id)
+    public function show(Article $article)
     {
-        $article = Article::find($id);
         if ($article == null) {
             abort(404, 'Sorry, that article was not found.');
         }
@@ -56,12 +55,11 @@ class ArticlesController extends Controller
             'body'    => 'required'
         ]);
 
-        $article = new Article();
-        $article->title   = request('title');
-        $article->excerpt = request('excerpt');
-        $article->body    = request('body');
-        $article->save();
-
+        Article::create([
+            'title'   => request('title'),
+            'excerpt' => request('excerpt'),
+            'body'    => request('body')
+        ]);
         return redirect('/articles');
     }
 
@@ -74,7 +72,7 @@ class ArticlesController extends Controller
      */
     public function edit($id)
     {
-        $article = Article::find($id);
+        $article = Article::findOrFail($id);
         return view('articles.edit', compact('article'));
     }
 
@@ -93,7 +91,7 @@ class ArticlesController extends Controller
             'body'    => 'required'
         ]);
 
-        $article = Article::find($id);
+        $article = Article::findOrFail($id);
 
         $article->title   = request('title');
         $article->excerpt = request('excerpt');
