@@ -40,7 +40,9 @@ Route::get('/articles/{article}/edit', 'ArticlesController@edit');
 Route::put('/articles/{article}', 'ArticlesController@update');
 
 Route::get('/post/{post}', "PostController@show");
-
+Route::get('/ping', function () {
+    var_dump("Ping from Webgoat Application");
+});
 
 // Routing standard
 
