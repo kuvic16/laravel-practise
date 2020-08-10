@@ -51,4 +51,14 @@ class User extends Authenticatable
     {
         return $this->hasMany(Post::class);
     }
+
+    public function articles()
+    {
+        return $this->hasMany(Article::class);
+    }
+
+    public function projects()
+    {
+        return $this->hasMany(Article::class);
+    }
 }
