@@ -10,4 +10,9 @@ class Tag extends Model
     {
         return $this->belongsToMany(Post::class)->withTimestamps();
     }
+
+    public function articles()
+    {
+        return $this->belongsToMany(Article::class)->withTimestamps();
+    }
 }
