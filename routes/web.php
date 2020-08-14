@@ -11,6 +11,7 @@
 |
 */
 
+Auth::routes();
 Route::get('/', function () {
     // $user = App\User::first();
     // $post = $user->posts()->create([
