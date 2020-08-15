@@ -3,11 +3,17 @@
 namespace App\Http\Controllers;
 
 use App\Article;
+use App\Services\UserService;
 use App\Tag;
 use Illuminate\Http\Request;
 
 class ArticlesController extends Controller
 {
+    protected $userService;
+    public function __construct(UserService $userService)
+    {
+        $this->userService = $userService;
+    }
     /**
      * Showing articles page
      * 
