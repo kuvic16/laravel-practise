@@ -47,4 +47,5 @@ $articles->pluck('tags')->collapse()->pluck('name');
 $articles->pluck('tags')->collapse()->pluck('name')->unique();
 $articles->pluck('tags.*.name');
 $articles->pluck('tags.*.name')->collapse()->unique();
+$articles->pluck('tags.*.name')->collapse()->unique()->map(function($item){return ucwords($item);});
 ```
