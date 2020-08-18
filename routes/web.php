@@ -45,6 +45,17 @@ Route::get('/ping', function () {
     var_dump("Ping from Webgoat Application");
 });
 
+Route::get('/di', function () {
+    $container = new \App\Container();
+    $container->bind('example', function () {
+        return new \App\Example();
+    });
+
+    $example = $container->resolve('example');
+    $example->get();
+    ddd($example);
+});
+
 // Routing standard
 
 // GET    /videos
