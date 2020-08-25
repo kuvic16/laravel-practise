@@ -65,3 +65,7 @@ Route::get('/di', function () {
 // GET    /videos/2/edit
 // PUT    /videos/2
 // DELETE /videos/2
+
+Route::get('/file', 'TestController@file');
+Route::get('/file1', 'TestController@file1');
+Route::get('/cache', 'TestController@cache');
