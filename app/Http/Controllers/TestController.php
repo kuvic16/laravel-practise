@@ -15,16 +15,31 @@ class TestController extends Controller
     {
     }
 
+    /**
+     * File router
+     * 
+     * @return void
+     */
     public function file()
     {
         return File::get(public_path('index.php'));
     }
 
+    /**
+     * File1 router
+     * 
+     * @return void
+     */
     public function file1(File $file)
     {
         return $file::get(public_path('index.php'));
     }
 
+    /**
+     * Cache router
+     * 
+     * @return void
+     */
     public function cache()
     {
         Cache::remember('foo', 60, function () {
