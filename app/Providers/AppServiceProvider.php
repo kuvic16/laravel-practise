@@ -2,6 +2,7 @@
 
 namespace App\Providers;
 
+use App\Example;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\Schema;
 
@@ -18,6 +19,10 @@ class AppServiceProvider extends ServiceProvider
             \App\Services\UserService::class,
             \App\Services\UserServiceImpl::class
         );
+
+        $this->app->bind(Example::class, function () {
+            return new Example('api-key-here');
+        });
     }
 
     /**

@@ -29,3 +29,9 @@ php artisan make:model Project -mc
 ```
 php artisan make:controller ProjectsController -r
 ```
+
+### Call a Facade method
+
+```
+App\ExampleFacade::handle();
+```
