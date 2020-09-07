@@ -32,6 +32,7 @@ class ContactController extends Controller
         request()->validate(['email' => 'required|email']);
         $email = request('email');
 
+        // simple email
         // Mail::raw('It works', function ($message) {
         //     $message->to(request('email'))
         //         ->subject('Hello there');

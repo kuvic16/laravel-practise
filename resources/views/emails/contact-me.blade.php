@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+{{-- <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -9,4 +9,19 @@
 <body>
 <h1>It Works Again! {{$topic}}</h1>
 </body>
-</html>
+</html> --}}
+
+
+@component('mail::message')
+# A heading
+
+This is just another sentence to show something.
+
+- A list
+- gies
+- i mmm
+@component('mail::button', ['url' => 'https://sheemoul.wordpress.com'])
+Visit My Blog
+@endcomponent
+
+@endcomponent
