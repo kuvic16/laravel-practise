@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\Contact;
 use App\Mail\ContactMe;
 use Illuminate\Support\Facades\Mail;
 
@@ -38,7 +39,8 @@ class ContactController extends Controller
         //         ->subject('Hello there');
         // });
 
-        Mail::to($email)->send(new ContactMe("Laravel"));
+        //Mail::to($email)->send(new ContactMe("Laravel"));
+        Mail::to($email)->send(new Contact());
 
         return redirect('/contact')->with('message', 'Email sent!');
     }
