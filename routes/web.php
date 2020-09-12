@@ -68,3 +68,7 @@ Route::get('/di', function () {
 Route::get('/file', 'TestController@file');
 Route::get('/file1', 'TestController@file1');
 Route::get('/cache', 'TestController@cache');
+
+
+Route::get('payments/create', 'PaymentsController@create')->middleware('auth');
+Route::post('payments', 'PaymentsController@store')->middleware('auth');
