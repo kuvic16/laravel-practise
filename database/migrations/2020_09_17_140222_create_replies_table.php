@@ -16,6 +16,7 @@ class CreateRepliesTable extends Migration
         Schema::create('replies', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->unsignedBigInteger('conversation_id');
+            $table->unsignedBigInteger('by_user_id');
             $table->string('details');
             $table->timestamps();
 
