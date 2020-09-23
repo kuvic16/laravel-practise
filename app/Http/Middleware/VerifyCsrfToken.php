@@ -19,6 +19,7 @@ class VerifyCsrfToken extends Middleware
      * @var array
      */
     protected $except = [
-        '/webhook/*' // bypass csrf for webhook like stripe or other webhook
+        '/webhook/*', // bypass csrf for webhook like stripe or other webhook
+        '/upload_csv'
     ];
 }

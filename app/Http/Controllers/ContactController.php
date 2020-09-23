@@ -15,6 +15,29 @@ class ContactController extends Controller
     {
     }
 
+    public function upload_csv()
+    {
+        $file = request()->file('csv');
+        //var_dump($file);
+        //var_dump("test");
+        $this->parseImport($file);
+    }
+
+    public function parseImport($file)
+    {
+        $file = fopen($file, 'r');
+        while (($line = fgetcsv($file)) !== FALSE) {
+            $data = [
+                'id' => $line[0],
+                'name' => $line[1]
+            ];
+            print_r($data);
+            //$this->store($request);
+        }
+        $this->store();
+        fclose($file);
+    }
+
     /**
      * Show the contact page
      * 
@@ -30,6 +53,8 @@ class ContactController extends Controller
      */
     public function store()
     {
+        //var_dump(request());
+        //die;
         request()->validate(['email' => 'required|email']);
         $email = request('email');
 

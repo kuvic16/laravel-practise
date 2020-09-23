@@ -73,3 +73,4 @@ Route::get('/cache', 'TestController@cache');
 Route::get('payments/create', 'PaymentsController@create')->middleware('auth');
 Route::post('payments', 'PaymentsController@store')->middleware('auth');
 Route::get('notifications', 'UserNotificationsController@show')->middleware('auth');
+Route::post('upload_csv', 'ContactController@upload_csv');
