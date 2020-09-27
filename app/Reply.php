@@ -46,6 +46,6 @@ class Reply extends Model
      */
     public function user()
     {
-        return $this->belongsTo(User::class);
+        return $this->belongsTo(User::class, "by_user_id");
     }
 }
