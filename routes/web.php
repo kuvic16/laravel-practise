@@ -75,5 +75,5 @@ Route::post('payments', 'PaymentsController@store')->middleware('auth');
 Route::get('notifications', 'UserNotificationsController@show')->middleware('auth');
 Route::post('upload_csv', 'ContactController@upload_csv');
 
-Route::get('conversations', 'ConversationsController@index');
+Route::get('conversations', 'ConversationController@index');
 Route::get('conversations/{conversation}', 'ConversationController@show');

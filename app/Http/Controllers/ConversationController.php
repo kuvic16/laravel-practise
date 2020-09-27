@@ -16,7 +16,7 @@ class ConversationController extends Controller
 
     public function show(Conversation $conversation)
     {
-        return view('conversation.show', [
+        return view('conversations.show', [
             'conversation' => $conversation
         ]);
     }
