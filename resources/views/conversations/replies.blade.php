@@ -6,12 +6,12 @@
 
 		{{$reply->details}}
 
-		@can('update-conversation', $conversation)
+		{{-- @can('update-conversation', $conversation) --}}
 			<form method="POST" action="/best-replies/{{ $reply->id}}">
 				@csrf
 				<button type="submit" class="btn p-0 text-muted">Best Reply?</button>
 			</form>
-		@endcan
+		{{-- @endcan --}}
 		
 	</div>
 

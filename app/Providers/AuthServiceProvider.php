@@ -28,8 +28,8 @@ class AuthServiceProvider extends ServiceProvider
         $this->registerPolicies();
 
         //
-        Gate::define('update-conversation', function (User $user, Conversation $conversation) {
-            return $conversation->user->is($user);
-        });
+        // Gate::define('update-conversation', function (User $user, Conversation $conversation) {
+        //     return $conversation->user->is($user);
+        // });
     }
 }

@@ -48,4 +48,17 @@ class Conversation extends Model
     {
         return $this->belongsTo(User::class);
     }
+
+    /**
+     * Save the best reply id of the conversation
+     * 
+     * @param App\Reply $reply
+     * 
+     * @return void
+     */
+    public function set_best_reply(Reply $reply)
+    {
+        $this->best_reply_id = $reply->id;
+        $this->save();
+    }
 }

@@ -48,4 +48,14 @@ class Reply extends Model
     {
         return $this->belongsTo(User::class, "by_user_id");
     }
+
+    /**
+     * Checking the reply is best
+     * 
+     * @return boolean
+     */
+    public function is_best()
+    {
+        return $this->id === $this->conversation->best_reply_id;
+    }
 }

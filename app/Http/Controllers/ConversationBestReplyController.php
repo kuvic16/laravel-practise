@@ -9,10 +9,10 @@ class ConversationBestReplyController extends Controller
 {
     public function store(Reply $reply)
     {
-        $this->authorize('update-conversation', $reply->conversation);
+        //$this->authorize('update-conversation', $reply->conversation);
+        $this->authorize('update', $reply->conversation);
 
-        $reply->conversation->best_reply_id = $reply->id;
-        $reply->conversation->save();
+        $reply->conversation->set_best_reply($reply);
 
         return back();
     }
