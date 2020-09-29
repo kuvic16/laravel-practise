@@ -11,9 +11,7 @@ class ConversationBestReplyController extends Controller
     {
         //$this->authorize('update-conversation', $reply->conversation);
         $this->authorize('update', $reply->conversation);
-
         $reply->conversation->set_best_reply($reply);
-
         return back();
     }
 }
