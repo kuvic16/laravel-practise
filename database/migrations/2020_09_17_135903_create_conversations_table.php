@@ -19,6 +19,7 @@ class CreateConversationsTable extends Migration
             $table->string('description', 500);
             $table->unsignedBigInteger('user_id');
             $table->timestamps();
+            $table->unsignedBigInteger('best_reply_id')->nullable();
 
             $table->foreign('user_id')
                 ->references('id')

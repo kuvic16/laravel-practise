@@ -77,3 +77,4 @@ Route::post('upload_csv', 'ContactController@upload_csv');
 
 Route::get('conversations', 'ConversationController@index');
 Route::get('conversations/{conversation}', 'ConversationController@show');
+Route::post('best-replies/{reply}', 'ConversationBestReplyController@store');
