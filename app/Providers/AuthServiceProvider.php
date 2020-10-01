@@ -33,10 +33,10 @@ class AuthServiceProvider extends ServiceProvider
         // });
 
         // set admin role centrally
-        Gate::before(function (User $user) {
-            if ($user->id === 6) {
-                return true;
-            }
-        });
+        // Gate::before(function (User $user) {
+        //     if ($user->id === 6) {
+        //         return true;
+        //     }
+        // });
     }
 }

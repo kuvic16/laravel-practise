@@ -10,10 +10,11 @@ class ConversationPolicy
 {
     use HandlesAuthorization;
 
-    public function before(User $user)
-    {
-        if ($user->id === 6) return true; //for admin previlige
-    }
+    // for admin
+    // public function before(User $user)
+    // {
+    //     if ($user->id === 6) return true; //for admin previlige
+    // }
 
     /**
      * Determine whether the user can view any conversations.
@@ -35,7 +36,7 @@ class ConversationPolicy
      */
     public function view(User $user, Conversation $conversation)
     {
-        //
+        return $conversation->user->is($user);
     }
 
     /**

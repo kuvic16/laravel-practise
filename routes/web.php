@@ -76,5 +76,5 @@ Route::get('notifications', 'UserNotificationsController@show')->middleware('aut
 Route::post('upload_csv', 'ContactController@upload_csv');
 
 Route::get('conversations', 'ConversationController@index');
-Route::get('conversations/{conversation}', 'ConversationController@show');
+Route::get('conversations/{conversation}', 'ConversationController@show')->middleware('can:view,conversation');
 Route::post('best-replies/{reply}', 'ConversationBestReplyController@store');
