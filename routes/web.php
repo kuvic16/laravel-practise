@@ -78,3 +78,5 @@ Route::post('upload_csv', 'ContactController@upload_csv');
 Route::get('conversations', 'ConversationController@index');
 Route::get('conversations/{conversation}', 'ConversationController@show')->middleware('can:view,conversation');
 Route::post('best-replies/{reply}', 'ConversationBestReplyController@store');
+
+//Authorization, we can do in three ways
