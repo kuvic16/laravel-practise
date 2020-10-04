@@ -71,4 +71,14 @@ class User extends Authenticatable
     {
         return $this->hasMany(Conversation::class);
     }
+
+    public function roles()
+    {
+        return $this->belongsTo(Role::class);
+    }
+
+    public function assignRole($role)
+    {
+        $this->roles()->save($role);
+    }
 }
