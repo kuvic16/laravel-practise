@@ -13,21 +13,21 @@ class CreateRolesTables extends Migration
      */
     public function up()
     {
-        Schema::table('roles', function (Blueprint $table) {
+        Schema::create('roles', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('name');
             $table->string('label')->nullable();
             $table->timestamps();
         });
 
-        Schema::table('abilities', function (Blueprint $table) {
+        Schema::create('abilities', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('name');
             $table->string('label')->nullable();
             $table->timestamps();
         });
 
-        Schema::table('ability_role', function (Blueprint $table) {
+        Schema::create('ability_role', function (Blueprint $table) {
             $table->primary(['role_id', 'ability_id']);
 
             $table->unsignedBigInteger('role_id');
@@ -45,7 +45,7 @@ class CreateRolesTables extends Migration
                 ->onDelete('cascade');
         });
 
-        Schema::table('role_user', function (Blueprint $table) {
+        Schema::create('role_user', function (Blueprint $table) {
             $table->primary(['user_id', 'role_id']);
 
 
