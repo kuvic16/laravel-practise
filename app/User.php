@@ -77,6 +77,13 @@ class User extends Authenticatable
         return $this->belongsTo(Role::class);
     }
 
+    /**
+     * Assign role
+     * 
+     * @param \App\Role $role
+     * 
+     * @return boolean
+     */
     public function assignRole($role)
     {
         $this->roles()->save($role);
