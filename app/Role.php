@@ -8,6 +8,15 @@ class Role extends Model
 {
     protected $gaurded = [];
 
+    /**
+     * The attributes that are mass assignable.
+     *
+     * @var array
+     */
+    protected $fillable = [
+        'name',
+    ];
+
     public function abilities()
     {
         return $this->belongsToMany(Ability::class);
