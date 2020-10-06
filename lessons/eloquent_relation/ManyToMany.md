@@ -54,3 +54,11 @@ $post = App\Post::find(5);
 $post->tags()->attach(1);
 $post->tags()->detach(1);
 ```
+
+## User can have multiple role and a role can have multiple abilities
+
+### To get a user abilities
+
+```
+$user->roles->map->abilities->flatten()->pluck('name')->unique();
+```
