@@ -4,6 +4,7 @@ namespace App\Providers;
 
 use App\Conversation;
 use App\User;
+use Illuminate\Auth\Access\Gate as AccessGate;
 use Illuminate\Foundation\Support\Providers\AuthServiceProvider as ServiceProvider;
 use Illuminate\Support\Facades\Gate;
 
@@ -38,5 +39,9 @@ class AuthServiceProvider extends ServiceProvider
         //         return true;
         //     }
         // });
+
+        Gate::before(function ($user, $ability) {
+            return $user->abilities()->contains($ability);
+        });
     }
 }
