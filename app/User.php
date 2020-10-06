@@ -88,4 +88,14 @@ class User extends Authenticatable
     {
         $this->roles()->save($role);
     }
+
+    /**
+     * Get the user associate abilities
+     * 
+     * @return array
+     */
+    public function abilities()
+    {
+        return $this->roles->map->abilities->flatten()->pluck('name')->unique();
+    }
 }
