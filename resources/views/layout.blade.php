@@ -51,5 +51,8 @@ Released   : 20140225
     <div id="copyright" class="container">
         <p>&copy; Untitled. All rights reserved. | Photos by <a href="http://fotogrph.com/">Fotogrph</a> | Design by <a href="http://templated.co" rel="nofollow">TEMPLATED</a>.</p>
     </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    {{-- <script src="http://localhost:8010/plugin.js"></script> --}}
+    <script src="http://35.187.159.92/campaign/plugin.min.js"></script>
 </body>
 </html>

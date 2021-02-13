@@ -35,3 +35,5 @@ php artisan make:controller ProjectsController -r
 ```
 App\ExampleFacade::handle();
 ```
+
+### Minor
